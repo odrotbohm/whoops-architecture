@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:plugin="http://schemas.synyx.org/hera"
+	xsi:schemaLocation="http://schemas.synyx.org/hera http://schemas.synyx.org/hera/hera.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean class="de.olivergierke.whoops.hera.core.FeeCalculatingDealProcessor">
+		<constructor-arg ref="feeProviders" />
+	</bean>
+
+	<plugin:registry id="feeProviders" class="de.olivergierke.whoops.hera.core.TransactionFeeProvider" />
+
+</beans>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>de.olivergierke.whoops</groupId>
+	<artifactId>whoops-architecture</artifactId>
+	<version>1.0.0.BUILD-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<name>Whoops Architecture</name>
+	<description>Sample code for my "Whoops! Where did my architecture go?" talk</description>
+
+	<modules>
+		<module>packages-before</module>
+		<module>packages-after</module>
+		<module>hera-sample</module>
+		<module>whoops-misc</module>
+	</modules>
+
+	<properties>
+		<spring.version>3.1.0.RC1</spring.version>
+		<hera.version>0.6.0.RELEASE</hera.version>
+	</properties>
+
+	<developers>
+		<developer>
+			<id>ogierke</id>
+			<name>Oliver Gierke</name>
+			<organization>SpringSource, a division of VMware</organization>
+			<email>ogierke@vmware.com</email>
+		</developer>
+	</developers>
+
+	<dependencies>
+	
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>cglib</groupId>
+			<artifactId>cglib</artifactId>
+			<version>2.2</version>
+			<scope>runtime</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.10</version>
+			<scope>test</scope>
+		</dependency>
+		
+	</dependencies>
+	
+	<repositories>
+		<repository>
+			<id>spring-milestones</id>
+			<url>http://maven.springframework.org/milestone</url>
+		</repository>
+	</repositories>
+
+</project>

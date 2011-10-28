@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	
+	<parent>
+		<artifactId>hera-sample</artifactId>
+		<groupId>de.olivergierke.whoops</groupId>
+		<version>1.0.0.BUILD-SNAPSHOT</version>
+	</parent>
+	
+	<groupId>de.olivergierke.whoops</groupId>
+	<artifactId>hera-app</artifactId>
+	
+	<name>Hera Application</name>
+	
+	<dependencies>
+		<dependency>
+			<groupId>de.olivergierke.whoops</groupId>
+  			<artifactId>hera-core</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>de.olivergierke.whoops</groupId>
+  			<artifactId>hera-equities</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>de.olivergierke.whoops</groupId>
+  			<artifactId>hera-options</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${spring.version}</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+</project>

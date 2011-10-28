@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	
+	<parent>
+		<artifactId>whoops-architecture</artifactId>
+		<groupId>de.olivergierke.whoops</groupId>
+		<version>1.0.0.BUILD-SNAPSHOT</version>
+	</parent>
+	
+	<groupId>de.olivergierke.whoops</groupId>
+	<artifactId>hera-sample</artifactId>
+	<packaging>pom</packaging>
+	
+	<name>Hera Sample Application</name>
+	<url>http://maven.apache.org</url>
+
+	<modules>
+		<module>core</module>
+		<module>equities</module>
+		<module>options</module>
+		<module>app</module>
+	</modules>
+	
+	<dependencies>
+		<dependency>
+			<groupId>org.synyx.hera</groupId>
+			<artifactId>org.synyx.hera.core</artifactId>
+			<version>0.8.0.BUILD-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
+	
+</project>
