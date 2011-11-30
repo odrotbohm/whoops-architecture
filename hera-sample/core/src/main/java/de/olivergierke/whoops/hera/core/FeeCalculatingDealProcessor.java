@@ -17,6 +17,8 @@ package de.olivergierke.whoops.hera.core;
 
 import java.math.BigDecimal;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
 import org.synyx.hera.core.PluginRegistry;
 
@@ -26,6 +28,7 @@ import org.synyx.hera.core.PluginRegistry;
  * 
  * @author Oliver Gierke
  */
+@Component
 class FeeCalculatingDealProcessor implements DealProcessor {
 
 	private final PluginRegistry<TransactionFeeProvider, Instrument> feeProviders;
@@ -35,6 +38,7 @@ class FeeCalculatingDealProcessor implements DealProcessor {
 	 * 
 	 * @param feeProviders
 	 */
+	@Autowired
 	public FeeCalculatingDealProcessor(PluginRegistry<TransactionFeeProvider, Instrument> feeProviders) {
 		Assert.notNull(feeProviders);
 		this.feeProviders = feeProviders;

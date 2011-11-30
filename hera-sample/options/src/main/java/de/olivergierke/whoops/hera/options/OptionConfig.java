@@ -16,9 +16,7 @@
 package de.olivergierke.whoops.hera.options;
 
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.ComponentScan.Filter;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.FilterType;
 
 /**
  * Configuration for the equities subsystem.
@@ -26,8 +24,7 @@ import org.springframework.context.annotation.FilterType;
  * @author Oliver Gierke
  */
 @Configuration
-@ComponentScan(basePackages = "de.olivergierke.whoops.hera.options",
-excludeFilters = @Filter(type = FilterType.ANNOTATION, value = Configuration.class))
+@ComponentScan(basePackageClasses = OptionConfig.class)
 public class OptionConfig {
 
 }

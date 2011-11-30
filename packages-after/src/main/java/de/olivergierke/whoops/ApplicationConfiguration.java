@@ -20,7 +20,6 @@ import org.mockito.stubbing.Answer;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.ComponentScan.Filter;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.FilterType;
 import org.springframework.stereotype.Controller;
 
 /**
@@ -28,9 +27,7 @@ import org.springframework.stereotype.Controller;
  * @author Oliver Gierke
  */
 @Configuration
-@ComponentScan(basePackageClasses = ApplicationConfiguration.class, excludeFilters = {
-	@Filter(type = FilterType.ANNOTATION, value = Configuration.class),
-	@Filter(type = FilterType.ANNOTATION, value = Controller.class) })
+@ComponentScan(basePackageClasses = ApplicationConfiguration.class, excludeFilters = @Filter(Controller.class))
 public class ApplicationConfiguration {
 
 	public static <T> Answer<T> withArgument() {
@@ -38,8 +35,6 @@ public class ApplicationConfiguration {
 	}
 
 	private static class ArgumentAnswer<T> implements Answer<T> {
-
-
 
 		@SuppressWarnings("unchecked")
 		public T answer(InvocationOnMock invocation) throws Throwable {

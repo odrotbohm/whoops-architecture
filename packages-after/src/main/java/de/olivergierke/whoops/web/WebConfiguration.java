@@ -18,7 +18,6 @@ package de.olivergierke.whoops.web;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.ComponentScan.Filter;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.FilterType;
 import org.springframework.stereotype.Controller;
 
 import de.olivergierke.whoops.ApplicationConfiguration;
@@ -28,7 +27,7 @@ import de.olivergierke.whoops.ApplicationConfiguration;
  * @author Oliver Gierke
  */
 @Configuration
-@ComponentScan(basePackageClasses = ApplicationConfiguration.class, includeFilters = @Filter(type = FilterType.ANNOTATION, value = Controller.class), excludeFilters = @Filter(type = FilterType.ANNOTATION, value = Configuration.class))
+@ComponentScan(basePackageClasses = ApplicationConfiguration.class, includeFilters = @Filter(Controller.class))
 public class WebConfiguration {
 
 }

@@ -18,6 +18,7 @@ package de.olivergierke.whoops.hera.core;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.synyx.hera.core.PluginRegistry;
 import org.synyx.hera.core.support.PluginRegistryFactoryBean;
@@ -29,15 +30,11 @@ import org.synyx.hera.core.support.PluginRegistryFactoryBean;
  * @author Oliver Gierke
  */
 @Configuration
+@ComponentScan(basePackageClasses = CoreConfig.class)
 public class CoreConfig {
 
 	@Autowired
 	ApplicationContext context;
-
-	@Bean
-	public DealProcessor dealProcessor() {
-		return new FeeCalculatingDealProcessor(feeProviders());
-	}
 
 	@Bean
 	public PluginRegistry<TransactionFeeProvider, Instrument> feeProviders() {

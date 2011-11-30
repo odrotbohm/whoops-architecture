@@ -16,9 +16,7 @@
 package de.olivergierke.whoops.hera.equities;
 
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.ComponentScan.Filter;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.FilterType;
 
 /**
  * Configuration for the equities subsystem.
@@ -26,7 +24,7 @@ import org.springframework.context.annotation.FilterType;
  * @author Oliver Gierke
  */
 @Configuration
-@ComponentScan(basePackages = "de.olivergierke.whoops.hera.equities", excludeFilters = @Filter(type = FilterType.ANNOTATION, value = Configuration.class))
+@ComponentScan(basePackageClasses = EquityConfig.class)
 public class EquityConfig {
 
 }

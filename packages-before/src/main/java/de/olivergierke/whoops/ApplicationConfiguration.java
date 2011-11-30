@@ -24,7 +24,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.ComponentScan.Filter;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.FilterType;
 import org.springframework.stereotype.Controller;
 
 import de.olivergierke.whoops.domain.account.Account;
@@ -37,9 +36,7 @@ import de.olivergierke.whoops.repository.customer.CustomerRepository;
  * @author Oliver Gierke
  */
 @Configuration
-@ComponentScan(basePackageClasses = ApplicationConfiguration.class, excludeFilters = {
-	@Filter(type = FilterType.ANNOTATION, value = Configuration.class),
-	@Filter(type = FilterType.ANNOTATION, value = Controller.class) })
+@ComponentScan(basePackageClasses = ApplicationConfiguration.class, excludeFilters = { @Filter(Controller.class) })
 class ApplicationConfiguration {
 
 	@Bean
@@ -62,8 +59,6 @@ class ApplicationConfiguration {
 	}
 
 	private static class ArgumentAnswer<T> implements Answer<T> {
-
-
 
 		@SuppressWarnings("unchecked")
 		public T answer(InvocationOnMock invocation) throws Throwable {
