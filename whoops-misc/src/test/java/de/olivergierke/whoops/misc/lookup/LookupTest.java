@@ -1,5 +1,5 @@
 /*
- * Copyright 2011 the original author or authors.
+ * Copyright 2011-2012 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,11 +26,11 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.ComponentScan.Filter;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.FilterType;
 
 /**
+ * Integration test showing the container injecting all beans of a given type when autowiring a {@link List} of a given
+ * type.
  * 
  * @author Oliver Gierke
  */
@@ -59,7 +59,7 @@ public class LookupTest {
 	}
 
 	@Configuration
-	@ComponentScan(basePackageClasses = MyComponent.class, excludeFilters = @Filter(type = FilterType.ANNOTATION, value = Configuration.class))
+	@ComponentScan(basePackageClasses = MyComponent.class)
 	static class ComponentScanConfig {
 
 	}

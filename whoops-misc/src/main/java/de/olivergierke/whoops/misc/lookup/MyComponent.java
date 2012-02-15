@@ -7,7 +7,9 @@ import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
 
 /**
- *
+ * A simple Spring component showing that the container will inject all Spring beans of a given type if we autowire a
+ * {@link List} of beans.
+ * 
  * @author Oliver Gierke
  */
 @Component
@@ -16,7 +18,9 @@ public class MyComponent {
 	private final List<MyPlugin> plugins;
 
 	/**
-	 * @param plugins
+	 * Creates a ne {@link MyComponent} instance
+	 * 
+	 * @param plugins will be all Spring beans implementing {@link MyPlugin}.
 	 */
 	@Autowired
 	public MyComponent(List<MyPlugin> plugins) {
@@ -25,6 +29,8 @@ public class MyComponent {
 	}
 
 	/**
+	 * Returns the {@link MyPlugin} instances set in the constructor.
+	 * 
 	 * @return the plugins
 	 */
 	List<MyPlugin> getPlugins() {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2011 the original author or authors.
+ * Copyright 2011-2012 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,10 +18,12 @@ package de.olivergierke.whoops.misc.lookup;
 import org.springframework.stereotype.Component;
 
 /**
- *
+ * An implementation of {@link MyPlugin}. Together with {@link SecondPlugin} they will make up two Spring beans
+ * implementing {@link MyPlugin}.
+ * 
  * @author Oliver Gierke
  */
 @Component
-public class FirstPlugin implements MyPlugin{
+public class FirstPlugin implements MyPlugin {
 
 }
