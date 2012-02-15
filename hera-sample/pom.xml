@@ -23,6 +23,10 @@
 		<module>app</module>
 	</modules>
 	
+	<properties>
+		<hera.version>0.8.0.BUILD-SNAPSHOT</hera.version>
+	</properties>
+	
 	<dependencies>
 		<dependency>
 			<groupId>org.synyx.hera</groupId>
