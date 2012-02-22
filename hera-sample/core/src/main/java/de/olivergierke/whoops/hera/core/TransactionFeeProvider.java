@@ -17,7 +17,7 @@ package de.olivergierke.whoops.hera.core;
 
 import java.math.BigDecimal;
 
-import org.synyx.hera.core.Plugin;
+import org.springframework.plugin.core.Plugin;
 
 /**
  * SPI interface to plug in calculation of transaction fees for an {@link Instrument}.

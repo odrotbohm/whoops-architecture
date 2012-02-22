@@ -18,8 +18,8 @@ package de.olivergierke.whoops.hera.options;
 import java.math.BigDecimal;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.plugin.core.PluginRegistry;
 import org.springframework.stereotype.Component;
-import org.synyx.hera.core.PluginRegistry;
 
 import de.olivergierke.whoops.hera.core.Instrument;
 import de.olivergierke.whoops.hera.core.TransactionFeeProvider;
@@ -45,7 +45,7 @@ class OptionTransactionFeeProvider implements TransactionFeeProvider {
 
 	/*
 	 * (non-Javadoc)
-	 * @see org.synyx.hera.core.Plugin#supports(java.lang.Object)
+	 * @see org.springframework.plugin.core.Plugin#supports(java.lang.Object)
 	 */
 	public boolean supports(Instrument delimiter) {
 		return delimiter instanceof Option;

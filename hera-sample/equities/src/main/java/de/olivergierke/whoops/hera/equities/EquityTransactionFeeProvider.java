@@ -33,7 +33,7 @@ class EquityTransactionFeeProvider implements TransactionFeeProvider {
 
 	/*
 	 * (non-Javadoc)
-	 * @see org.synyx.hera.core.Plugin#supports(java.lang.Object)
+	 * @see org.springframework.plugin.core.Plugin#supports(java.lang.Object)
 	 */
 	public boolean supports(Instrument delimiter) {
 		return delimiter instanceof Equity;

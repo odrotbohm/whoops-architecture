@@ -29,8 +29,8 @@
 	
 	<dependencies>
 		<dependency>
-			<groupId>org.synyx.hera</groupId>
-			<artifactId>org.synyx.hera.core</artifactId>
+			<groupId>org.springframework.plugin</groupId>
+			<artifactId>spring-plugin-core</artifactId>
 			<version>0.8.0.BUILD-SNAPSHOT</version>
 		</dependency>
 	</dependencies>

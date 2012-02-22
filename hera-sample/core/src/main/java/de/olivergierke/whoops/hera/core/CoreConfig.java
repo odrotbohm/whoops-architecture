@@ -20,8 +20,8 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.synyx.hera.core.PluginRegistry;
-import org.synyx.hera.core.support.PluginRegistryFactoryBean;
+import org.springframework.plugin.core.PluginRegistry;
+import org.springframework.plugin.core.support.PluginRegistryFactoryBean;
 
 
 /**

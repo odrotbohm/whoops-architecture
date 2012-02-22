@@ -18,9 +18,9 @@ package de.olivergierke.whoops.hera.core;
 import java.math.BigDecimal;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.plugin.core.PluginRegistry;
 import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
-import org.synyx.hera.core.PluginRegistry;
 
 /**
  * Sample {@link DealProcessor} implementation that accesses {@link TransactionFeeProvider}s through a Hera
