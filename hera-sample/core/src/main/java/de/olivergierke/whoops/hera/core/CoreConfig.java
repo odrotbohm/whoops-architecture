@@ -23,6 +23,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.plugin.core.PluginRegistry;
 import org.springframework.plugin.core.support.PluginRegistryFactoryBean;
 
+import de.olivergierke.whoops.hera.App;
 
 /**
  * Configuration for core components.
@@ -30,7 +31,7 @@ import org.springframework.plugin.core.support.PluginRegistryFactoryBean;
  * @author Oliver Gierke
  */
 @Configuration
-@ComponentScan(basePackageClasses = CoreConfig.class)
+@ComponentScan(basePackageClasses = App.class)
 public class CoreConfig {
 
 	@Autowired

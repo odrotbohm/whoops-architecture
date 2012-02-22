@@ -17,15 +17,13 @@ import de.olivergierke.whoops.hera.core.DealProcessor;
 import de.olivergierke.whoops.hera.core.Result;
 import de.olivergierke.whoops.hera.core.UnsupportedInstrumentException;
 import de.olivergierke.whoops.hera.equities.Equity;
-import de.olivergierke.whoops.hera.equities.EquityConfig;
 import de.olivergierke.whoops.hera.options.Option;
-import de.olivergierke.whoops.hera.options.OptionConfig;
 
 /**
  * Integration test using JavaConfig.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = { CoreConfig.class, EquityConfig.class, OptionConfig.class })
+@ContextConfiguration(classes = { CoreConfig.class })
 public class JavaConfigTest {
 
 	@Autowired
