@@ -24,7 +24,7 @@
 		<dependency>
 			<groupId>org.springframework.data</groupId>
 			<artifactId>spring-data-commons-core</artifactId>
-			<version>1.2.0.M2</version>
+			<version>${spring.data.commons.version}</version>
 		</dependency>
 
 		<dependency>

@@ -93,7 +93,7 @@
 	<repositories>
 		<repository>
 			<id>spring-milestones</id>
-			<url>http://maven.springframework.org/milestone</url>
+			<url>http://repo.springsource.org/libs-milestone</url>
 		</repository>
 	</repositories>
 
