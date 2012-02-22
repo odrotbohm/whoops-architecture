@@ -20,7 +20,6 @@ import static org.junit.Assert.*;
 
 import java.math.BigDecimal;
 
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,12 +29,13 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import de.olivergierke.whoops.hera.core.Deal;
 import de.olivergierke.whoops.hera.core.DealProcessor;
 import de.olivergierke.whoops.hera.core.Result;
+import de.olivergierke.whoops.hera.core.UnsupportedInstrumentException;
 import de.olivergierke.whoops.hera.equities.Equity;
 import de.olivergierke.whoops.hera.options.Option;
 
 /**
  * Integration test using XML configuration.
- *
+ * 
  * @author Oliver Gierke
  */
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -63,8 +63,7 @@ public class XmlConfigTest {
 		assertThat(result.getFee(), is(new BigDecimal(10.5).multiply(new BigDecimal(1.2))));
 	}
 
-	@Test
-	@Ignore
+	@Test(expected = UnsupportedInstrumentException.class)
 	public void handlesUnsupportedInstrument() {
 
 		Deal deal = new Deal(new UnsupportedInstrument());
