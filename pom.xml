@@ -13,7 +13,7 @@
 	<modules>
 		<module>packages-before</module>
 		<module>packages-after</module>
-		<module>hera-sample</module>
+		<module>plugins-sample</module>
 		<module>whoops-misc</module>
 	</modules>
 

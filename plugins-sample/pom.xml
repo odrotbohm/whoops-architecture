@@ -10,10 +10,10 @@
 	</parent>
 	
 	<groupId>de.olivergierke.whoops</groupId>
-	<artifactId>hera-sample</artifactId>
+	<artifactId>plugins-sample</artifactId>
 	<packaging>pom</packaging>
 	
-	<name>Hera Sample Application</name>
+	<name>Plugins Sample</name>
 	<url>http://maven.apache.org</url>
 
 	<modules>
@@ -24,7 +24,7 @@
 	</modules>
 	
 	<properties>
-		<hera.version>0.8.0.BUILD-SNAPSHOT</hera.version>
+		<spring-plugins.version>0.8.0.BUILD-SNAPSHOT</spring-plugins.version>
 	</properties>
 	
 	<dependencies>

@@ -4,30 +4,30 @@
 	<modelVersion>4.0.0</modelVersion>
 	
 	<parent>
-		<artifactId>hera-sample</artifactId>
+		<artifactId>plugins-sample</artifactId>
 		<groupId>de.olivergierke.whoops</groupId>
 		<version>1.0.0.BUILD-SNAPSHOT</version>
 	</parent>
 	
 	<groupId>de.olivergierke.whoops</groupId>
-	<artifactId>hera-app</artifactId>
+	<artifactId>plugins-app</artifactId>
 	
-	<name>Hera Application</name>
+	<name>Plugins Sample - Application</name>
 	
 	<dependencies>
 		<dependency>
 			<groupId>de.olivergierke.whoops</groupId>
-  			<artifactId>hera-core</artifactId>
+  			<artifactId>plugins-core</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>de.olivergierke.whoops</groupId>
-  			<artifactId>hera-equities</artifactId>
+  			<artifactId>plugins-equities</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>de.olivergierke.whoops</groupId>
-  			<artifactId>hera-options</artifactId>
+  			<artifactId>plugins-options</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
