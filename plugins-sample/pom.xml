@@ -30,7 +30,7 @@
 		<dependency>
 			<groupId>org.springframework.plugin</groupId>
 			<artifactId>spring-plugin-core</artifactId>
-			<version>0.8.0.BUILD-SNAPSHOT</version>
+			<version>${spring-plugins.version}</version>
 		</dependency>
 	</dependencies>
 	
