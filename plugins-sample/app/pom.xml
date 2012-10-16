@@ -9,7 +9,6 @@
 		<version>1.0.0.BUILD-SNAPSHOT</version>
 	</parent>
 	
-	<groupId>de.olivergierke.whoops</groupId>
 	<artifactId>plugins-app</artifactId>
 	
 	<name>Plugins Sample - Application</name>

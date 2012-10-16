@@ -7,7 +7,6 @@
     <version>1.0.0.BUILD-SNAPSHOT</version>
   </parent>
   
-  <groupId>de.olivergierke.whoops</groupId>
   <artifactId>plugins-core</artifactId>
   
   <name>Plugins Sample - Core</name>

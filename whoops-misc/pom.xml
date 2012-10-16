@@ -8,7 +8,6 @@
 		<version>1.0.0.BUILD-SNAPSHOT</version>
 	</parent>
 	
-	<groupId>de.olivergierke.whoops</groupId>
 	<artifactId>whoops-misc</artifactId>
 	
 	<name>Miscellaneous</name>
