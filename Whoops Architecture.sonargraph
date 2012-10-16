@@ -27,16 +27,16 @@
                 <dependency type="AllowedDependency" toName="Project|My Project::Layer|Domain"/>
                 <dependency type="AllowedDependency" toName="Project|My Project::Layer|Service"/>
             </element>
-            <element name="Customer" type="VerticalSlice">
-                <element name="Assignment" type="TypeFilter">
-                    <element name="**.customer.**" type="IncludeTypePattern"/>
-                </element>
-            </element>
             <element name="Accounts" type="VerticalSlice">
                 <element name="Assignment" type="TypeFilter">
                     <element name="**.account.**" type="IncludeTypePattern"/>
                 </element>
                 <dependency type="AllowedDependency" toName="Project|My Project::VerticalSlice|Customer"/>
+            </element>
+            <element name="Customer" type="VerticalSlice">
+                <element name="Assignment" type="TypeFilter">
+                    <element name="**.customer.**" type="IncludeTypePattern"/>
+                </element>
             </element>
         </architecture>
         <workspace>
@@ -165,7 +165,6 @@
         <property name="NumberOfCyclicVerticalSlices" value="disabled"/>
         <property name="NormalizedCumulativeTypeDependency" value="disabled"/>
         <property name="AccumulatedCyclomaticComplexity" value="disabled"/>
-        <property name="NumberOfCyclicWarnings" value="disabled"/>
         <property name="NumberOfMetricWarnings" value="disabled"/>
         <property name="NumberOfNameParts" value="disabled"/>
         <property name="NumberOfTasks" value="disabled"/>
