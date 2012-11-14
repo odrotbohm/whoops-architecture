@@ -13,32 +13,27 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package de.olivergierke.whoops.hera.core;
+package de.olivergierke.whoops.options;
 
-import org.springframework.util.Assert;
+import de.olivergierke.whoops.core.Instrument;
 
 /**
  * 
  * @author Oliver Gierke
  */
-public class Deal {
+public class Option extends Instrument {
 
-	private final Instrument instrument;
+	private Instrument underlying;
 
-	/**
-	 * Creates a new {@link Deal} for the given {@link Instrument}.
-	 * 
-	 * @param instrument
-	 */
-	public Deal(Instrument instrument) {
-		Assert.notNull(instrument);
-		this.instrument = instrument;
+	public Option(Instrument underlying) {
+		super(underlying.getIssuer());
+		this.underlying = underlying;
 	}
 
 	/**
-	 * @return the instrument
+	 * @return the underlying
 	 */
-	public Instrument getInstrument() {
-		return instrument;
+	public Instrument getUnderlying() {
+		return underlying;
 	}
 }

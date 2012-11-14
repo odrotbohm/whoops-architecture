@@ -13,14 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package de.olivergierke.whoops.hera.equities;
+package de.olivergierke.whoops.equities;
 
 import java.math.BigDecimal;
 
 import org.springframework.stereotype.Component;
 
-import de.olivergierke.whoops.hera.core.Instrument;
-import de.olivergierke.whoops.hera.core.TransactionFeeProvider;
+import de.olivergierke.whoops.core.Instrument;
+import de.olivergierke.whoops.core.TransactionFeeProvider;
 
 /**
  *
@@ -41,7 +41,7 @@ class EquityTransactionFeeProvider implements TransactionFeeProvider {
 
 	/*
 	 * (non-Javadoc)
-	 * @see de.olivergierke.whoops.hera.core.TransactionFeeProvider#getTransactionFee(de.olivergierke.whoops.hera.core.Instrument)
+	 * @see de.olivergierke.whoops.core.TransactionFeeProvider#getTransactionFee(de.olivergierke.whoops.core.Instrument)
 	 */
 	public BigDecimal getTransactionFee(Instrument instrument) {
 

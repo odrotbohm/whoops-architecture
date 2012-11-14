@@ -31,7 +31,6 @@ import de.olivergierke.whoops.customer.CustomerConfig;
 import de.olivergierke.whoops.customer.CustomerService;
 
 /**
- * 
  * @author Oliver Gierke
  */
 @RunWith(SpringJUnit4ClassRunner.class)

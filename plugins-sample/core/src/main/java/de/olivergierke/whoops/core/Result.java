@@ -13,13 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package de.olivergierke.whoops.hera.core;
+package de.olivergierke.whoops.core;
+
+import java.math.BigDecimal;
 
 /**
+ * Interface to abstract the {@link Result} of a processed {@link Deal}.
  *
  * @author Oliver Gierke
  */
-public interface DealProcessor {
+public interface Result {
 
-	Result process(Deal deal);
+	BigDecimal getFee();
 }

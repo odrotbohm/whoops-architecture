@@ -1,5 +1,5 @@
 /*
- * Copyright 2011 the original author or authors.
+ * Copyright 2011-2012 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,18 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package de.olivergierke.whoops.hera.app;
+package de.olivergierke.whoops.equities;
 
-import de.olivergierke.whoops.hera.core.Instrument;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 
 /**
- * Value object to represent an {@link Instrument} not supported by any plugin.
+ * Configuration for the equities subsystem.
  * 
  * @author Oliver Gierke
  */
-public class UnsupportedInstrument extends Instrument {
+@Configuration
+@ComponentScan
+public class EquityConfig {
 
-	public UnsupportedInstrument() {
-		super("NONE");
-	}
 }

@@ -13,16 +13,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package de.olivergierke.whoops.hera.core;
+package de.olivergierke.whoops.core;
 
 import java.math.BigDecimal;
 
+import org.springframework.plugin.core.Plugin;
+
 /**
- * Interface to abstract the {@link Result} of a processed {@link Deal}.
+ * SPI interface to plug in calculation of transaction fees for an {@link Instrument}.
  *
  * @author Oliver Gierke
  */
-public interface Result {
+public interface TransactionFeeProvider extends Plugin<Instrument> {
 
-	BigDecimal getFee();
+	public static BigDecimal NO_FEE = BigDecimal.ZERO;
+
+	/**
+	 * Returns the fee to be payed for processing the given {@link Instrument}.
+	 * 
+	 * @param instrument will never be {@literal null}.
+	 * @return must not be {@literal null}.
+	 */
+	BigDecimal getTransactionFee(Instrument instrument);
 }

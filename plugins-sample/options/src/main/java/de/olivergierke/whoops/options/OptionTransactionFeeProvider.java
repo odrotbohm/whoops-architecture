@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package de.olivergierke.whoops.hera.options;
+package de.olivergierke.whoops.options;
 
 import java.math.BigDecimal;
 
@@ -21,8 +21,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.plugin.core.PluginRegistry;
 import org.springframework.stereotype.Component;
 
-import de.olivergierke.whoops.hera.core.Instrument;
-import de.olivergierke.whoops.hera.core.TransactionFeeProvider;
+import de.olivergierke.whoops.core.Instrument;
+import de.olivergierke.whoops.core.TransactionFeeProvider;
 
 /**
  *
@@ -53,7 +53,7 @@ class OptionTransactionFeeProvider implements TransactionFeeProvider {
 
 	/*
 	 * (non-Javadoc)
-	 * @see de.olivergierke.whoops.hera.core.TransactionFeeProvider#getTransactionFee(de.olivergierke.whoops.hera.core.Instrument)
+	 * @see de.olivergierke.whoops.core.TransactionFeeProvider#getTransactionFee(de.olivergierke.whoops.core.Instrument)
 	 */
 	public BigDecimal getTransactionFee(Instrument instrument) {
 

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package de.olivergierke.whoops.hera.app;
+package de.olivergierke.whoops.app;
 
 import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.*;
@@ -26,12 +26,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import de.olivergierke.whoops.hera.core.Deal;
-import de.olivergierke.whoops.hera.core.DealProcessor;
-import de.olivergierke.whoops.hera.core.Result;
-import de.olivergierke.whoops.hera.core.UnsupportedInstrumentException;
-import de.olivergierke.whoops.hera.equities.Equity;
-import de.olivergierke.whoops.hera.options.Option;
+import de.olivergierke.whoops.app.UnsupportedInstrument;
+import de.olivergierke.whoops.core.Deal;
+import de.olivergierke.whoops.core.DealProcessor;
+import de.olivergierke.whoops.core.Result;
+import de.olivergierke.whoops.core.UnsupportedInstrumentException;
+import de.olivergierke.whoops.equities.Equity;
+import de.olivergierke.whoops.options.Option;
 
 /**
  * Integration test using XML configuration.

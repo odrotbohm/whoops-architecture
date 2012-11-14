@@ -1,5 +1,5 @@
 /*
- * Copyright 2012 the original author or authors.
+ * Copyright 2011 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,16 +13,32 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package de.olivergierke.whoops.hera;
+package de.olivergierke.whoops.core;
 
-import de.olivergierke.whoops.hera.core.CoreConfig;
+import org.springframework.util.Assert;
 
 /**
- * Marker interface to allow component scanning to refer to the root package of the application.
  * 
- * @see CoreConfig
  * @author Oliver Gierke
  */
-public interface App {
+public class Deal {
 
+	private final Instrument instrument;
+
+	/**
+	 * Creates a new {@link Deal} for the given {@link Instrument}.
+	 * 
+	 * @param instrument
+	 */
+	public Deal(Instrument instrument) {
+		Assert.notNull(instrument);
+		this.instrument = instrument;
+	}
+
+	/**
+	 * @return the instrument
+	 */
+	public Instrument getInstrument() {
+		return instrument;
+	}
 }

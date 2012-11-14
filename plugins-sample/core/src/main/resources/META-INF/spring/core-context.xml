@@ -5,10 +5,10 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/plugin http://www.springframework.org/schema/plugin/spring-plugin.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean class="de.olivergierke.whoops.hera.core.FeeCalculatingDealProcessor">
+	<bean class="de.olivergierke.whoops.core.FeeCalculatingDealProcessor">
 		<constructor-arg ref="feeProviders" />
 	</bean>
 
-	<plugin:registry id="feeProviders" class="de.olivergierke.whoops.hera.core.TransactionFeeProvider" />
+	<plugin:registry id="feeProviders" class="de.olivergierke.whoops.core.TransactionFeeProvider" />
 
 </beans>

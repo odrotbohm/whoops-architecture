@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package de.olivergierke.whoops.hera.core;
+package de.olivergierke.whoops.core;
 
 import java.math.BigDecimal;
 
@@ -46,7 +46,7 @@ class FeeCalculatingDealProcessor implements DealProcessor {
 
 	/*
 	 * (non-Javadoc)
-	 * @see de.olivergierke.whoops.hera.core.DealProcessor#process(de.olivergierke.whoops.hera.core.Deal)
+	 * @see de.olivergierke.whoops.core.DealProcessor#process(de.olivergierke.whoops.core.Deal)
 	 */
 	public Result process(Deal deal) {
 

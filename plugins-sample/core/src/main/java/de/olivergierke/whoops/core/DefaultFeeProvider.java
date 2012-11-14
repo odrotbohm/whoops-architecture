@@ -13,28 +13,31 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package de.olivergierke.whoops.hera.core;
+package de.olivergierke.whoops.core;
 
 import java.math.BigDecimal;
 
 /**
- * {@link Result} value object capturing the fee of a processed deal.
  *
  * @author Oliver Gierke
  */
-class DefaultResult implements Result {
+enum DefaultFeeProvider implements TransactionFeeProvider {
 
-	private final BigDecimal fee;
+	INSTANCE;
 
-	public DefaultResult(BigDecimal fee) {
-		this.fee = fee;
+	/*
+	 * (non-Javadoc)
+	 * @see de.olivergierke.whoops.core.TransactionFeeProvider#getTransactionFee(de.olivergierke.whoops.core.Instrument)
+	 */
+	public BigDecimal getTransactionFee(Instrument instrument) {
+		return new BigDecimal(0);
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * @see de.olivergierke.whoops.hera.core.Result#getFee()
+	 * @see org.springframework.plugin.core.Plugin#supports(java.lang.Object)
 	 */
-	public BigDecimal getFee() {
-		return fee;
+	public boolean supports(Instrument delimiter) {
+		return true;
 	}
 }

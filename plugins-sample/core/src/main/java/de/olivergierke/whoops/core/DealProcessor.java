@@ -13,28 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package de.olivergierke.whoops.hera.core;
-
-import org.springframework.util.Assert;
+package de.olivergierke.whoops.core;
 
 /**
- * Base class for financial instrument entities.
  *
  * @author Oliver Gierke
  */
-public abstract class Instrument {
+public interface DealProcessor {
 
-	private final String issuer;
-
-	public Instrument(String issuer) {
-		Assert.hasText(issuer);
-		this.issuer = issuer;
-	}
-
-	/**
-	 * @return the issuer
-	 */
-	public String getIssuer() {
-		return issuer;
-	}
+	Result process(Deal deal);
 }

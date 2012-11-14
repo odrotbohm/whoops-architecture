@@ -13,31 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package de.olivergierke.whoops.hera.core;
+package de.olivergierke.whoops.equities;
 
-import java.math.BigDecimal;
+import de.olivergierke.whoops.core.Instrument;
 
 /**
  *
  * @author Oliver Gierke
  */
-enum DefaultFeeProvider implements TransactionFeeProvider {
+public class Equity extends Instrument {
 
-	INSTANCE;
-
-	/*
-	 * (non-Javadoc)
-	 * @see de.olivergierke.whoops.hera.core.TransactionFeeProvider#getTransactionFee(de.olivergierke.whoops.hera.core.Instrument)
-	 */
-	public BigDecimal getTransactionFee(Instrument instrument) {
-		return new BigDecimal(0);
-	}
-
-	/*
-	 * (non-Javadoc)
-	 * @see org.springframework.plugin.core.Plugin#supports(java.lang.Object)
-	 */
-	public boolean supports(Instrument delimiter) {
-		return true;
+	public Equity(String issuer) {
+		super(issuer);
 	}
 }

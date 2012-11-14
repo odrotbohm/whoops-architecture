@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2012 the original author or authors.
+ * Copyright 2011 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,18 +13,28 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package de.olivergierke.whoops.hera.equities;
+package de.olivergierke.whoops.core;
 
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
+import java.math.BigDecimal;
 
 /**
- * Configuration for the equities subsystem.
- * 
+ * {@link Result} value object capturing the fee of a processed deal.
+ *
  * @author Oliver Gierke
  */
-@Configuration
-@ComponentScan
-public class EquityConfig {
+class DefaultResult implements Result {
 
+	private final BigDecimal fee;
+
+	public DefaultResult(BigDecimal fee) {
+		this.fee = fee;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * @see de.olivergierke.whoops.core.Result#getFee()
+	 */
+	public BigDecimal getFee() {
+		return fee;
+	}
 }
