@@ -1,5 +1,5 @@
 /*
- * Copyright 2011 the original author or authors.
+ * Copyright 2011-2013 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,26 +20,32 @@ import java.math.BigDecimal;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.plugin.core.PluginRegistry;
 import org.springframework.stereotype.Component;
+import org.springframework.util.Assert;
 
 import de.olivergierke.whoops.core.Instrument;
 import de.olivergierke.whoops.core.TransactionFeeProvider;
 
 /**
- *
+ * {@link TransactionFeeProvider} implementation for {@link Option}s. Uses a {@link PluginRegistry} of
+ * {@link TransactionFeeProvider}s in turn to delegate fee calculation for the {@link Option}'s underlying.
+ * 
  * @author Oliver Gierke
  */
 @Component
 class OptionTransactionFeeProvider implements TransactionFeeProvider {
 
-	private PluginRegistry<TransactionFeeProvider, Instrument> feeProviders;
-	private BigDecimal multiplier = new BigDecimal(1.2);
+	private final PluginRegistry<TransactionFeeProvider, Instrument> feeProviders;
+	private final BigDecimal multiplier = new BigDecimal(1.2);
 
 	/**
-	 * Creates a new {@link OptionTransactionFeeProvider}
-	 * @param feeProviders
+	 * Creates a new {@link OptionTransactionFeeProvider} using the given {@link TransactionFeeProvider}s.
+	 * 
+	 * @param feeProviders must not be {@literal null}.
 	 */
 	@Autowired
 	public OptionTransactionFeeProvider(PluginRegistry<TransactionFeeProvider, Instrument> feeProviders) {
+
+		Assert.notNull(feeProviders, "FeeProviders must not be null!");
 		this.feeProviders = feeProviders;
 	}
 
