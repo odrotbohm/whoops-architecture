@@ -41,9 +41,7 @@ public class JavaConfigTest {
 	public void handlesUnsupportedInstrument() {
 
 		Deal deal = new Deal(new UnsupportedInstrument());
-		Result result = processor.process(deal);
-
-		assertThat(result.getFee(), is(new BigDecimal(0.0)));
+		processor.process(deal);
 	}
 
 	@Test
