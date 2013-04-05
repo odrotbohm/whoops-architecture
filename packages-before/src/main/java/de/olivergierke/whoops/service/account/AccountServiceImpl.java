@@ -1,5 +1,5 @@
 /*
- * Copyright 2011 the original author or authors.
+ * Copyright 2011-2013 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,6 +15,8 @@
  */
 package de.olivergierke.whoops.service.account;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
@@ -22,42 +24,42 @@ import org.springframework.util.Assert;
 import de.olivergierke.whoops.domain.account.Account;
 import de.olivergierke.whoops.domain.customer.Customer;
 import de.olivergierke.whoops.repository.account.AccountRepository;
-import de.olivergierke.whoops.repository.customer.CustomerRepository;
 
 /**
+ * Default implementation of {@link AccountService}.
  * 
  * @author Oliver Gierke
  */
 @Service
 public class AccountServiceImpl implements AccountService {
 
-	private final AccountRepository accountRepository;
-	private final CustomerRepository customerRepository;
+	private final AccountRepository repository;
 
 	/**
-	 * Creates a new {@link AccountServiceImpl}.
+	 * Creates a new {@link AccountServiceImpl} using the given {@link AccountRepository}.
 	 * 
 	 * @param repository must not be {@literal null}.
 	 */
 	@Autowired
-	public AccountServiceImpl(AccountRepository accountRepository, CustomerRepository customerRepository) {
-		Assert.notNull(accountRepository);
-		Assert.notNull(customerRepository);
-		this.accountRepository = accountRepository;
-		this.customerRepository = customerRepository;
+	public AccountServiceImpl(AccountRepository repository) {
+
+		Assert.notNull(repository);
+		this.repository = repository;
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * @see de.olivergierke.whoops.service.account.AccountService#extendContractsFor(de.olivergierke.whoops.domain.customer.Customer)
+	 * @see de.olivergierke.whoops.account.AccountService#extendContractsFor(de.olivergierke.whoops.customer.Customer)
 	 */
 	public void extendContractsFor(Customer customer) {
 
-		for (Account account : customer.getAccounts()) {
+		Assert.notNull(customer, "Customer must not be null!");
+		List<Account> accounts = repository.findByCustomer(customer);
+
+		for (Account account : accounts) {
 			account.extend();
-			accountRepository.save(account);
 		}
 
-		customerRepository.save(customer);
+		repository.save(accounts);
 	}
 }

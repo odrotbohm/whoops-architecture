@@ -1,5 +1,5 @@
 /*
- * Copyright 2011 the original author or authors.
+ * Copyright 2011-2013 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,12 +15,19 @@
  */
 package de.olivergierke.whoops.customer;
 
-
 /**
- *
+ * Component interface to expose business functionality for {@link Customer}s.
+ * 
  * @author Oliver Gierke
  */
 public interface CustomerService {
 
+	/**
+	 * Creates a new {@link Customer} with the given first and lastname.
+	 * 
+	 * @param firstname must not be {@literal null} or empty.
+	 * @param lastname must not be {@literal null} or empty.
+	 * @return
+	 */
 	Customer createCustomer(String firstname, String lastname);
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2011 the original author or authors.
+ * Copyright 2011-2013 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ import org.springframework.util.Assert;
 import de.olivergierke.whoops.customer.Customer;
 
 /**
+ * Default implementation of {@link AccountService}.
  * 
  * @author Oliver Gierke
  */
@@ -33,22 +34,24 @@ class AccountServiceImpl implements AccountService {
 	private final AccountRepository repository;
 
 	/**
-	 * Creates a new {@link AccountServiceImpl}.
+	 * Creates a new {@link AccountServiceImpl} using the given {@link AccountRepository}.
 	 * 
 	 * @param repository must not be {@literal null}.
 	 */
 	@Autowired
 	public AccountServiceImpl(AccountRepository repository) {
+
 		Assert.notNull(repository);
 		this.repository = repository;
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * @see de.olivergierke.whoops.service.account.AccountService#extendContractsFor(de.olivergierke.whoops.domain.customer.Customer)
+	 * @see de.olivergierke.whoops.account.AccountService#extendContractsFor(de.olivergierke.whoops.customer.Customer)
 	 */
 	public void extendContractsFor(Customer customer) {
 
+		Assert.notNull(customer, "Customer must not be null!");
 		List<Account> accounts = repository.findByCustomer(customer);
 
 		for (Account account : accounts) {

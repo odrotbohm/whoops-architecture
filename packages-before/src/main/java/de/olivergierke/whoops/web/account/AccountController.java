@@ -1,5 +1,5 @@
 /*
- * Copyright 2011 the original author or authors.
+ * Copyright 2011-2013 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,10 +19,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.Assert;
 
+import de.olivergierke.whoops.domain.account.Account;
 import de.olivergierke.whoops.service.account.AccountService;
 
 /**
- *
+ * Stub web component managing {@link Account} thorugh an {@link AccountService}.
+ * 
  * @author Oliver Gierke
  */
 @Controller
@@ -32,13 +34,16 @@ public class AccountController {
 	private final AccountService accountService;
 
 	/**
-	 * @param accountService
+	 * Creates a new {@link AccountController} using the given {@link AccountService}.
+	 * 
+	 * @param accountService must not be {@literal null}.
 	 */
 	@Autowired
 	public AccountController(AccountService accountService) {
+
 		Assert.notNull(accountService);
 		this.accountService = accountService;
 	}
 
-
+	// controller methods go here
 }

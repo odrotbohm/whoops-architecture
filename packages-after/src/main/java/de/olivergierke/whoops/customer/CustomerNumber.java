@@ -1,5 +1,5 @@
 /*
- * Copyright 2011 the original author or authors.
+ * Copyright 2011-2013 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,22 +21,35 @@ import org.springframework.util.Assert;
 import org.springframework.util.StringUtils;
 
 /**
- *
+ * Value object to represent customer numbers.
+ * 
  * @author Oliver Gierke
  */
 @Embeddable
 public class CustomerNumber {
 
-	public static final int LENGTH = 10;
+	static final int LENGTH = 10;
 
 	private static final String REGEX = "[A-Z0-9]{" + LENGTH + "}";
 	private final String number;
 
-	public CustomerNumber(String number) {
+	/**
+	 * Creates a new {@link CustomerNumber} from the given {@link String}.
+	 * 
+	 * @param number must not be {@literal null} or empty.
+	 */
+	CustomerNumber(String number) {
+
 		Assert.isTrue(isValid(number));
 		this.number = number;
 	}
 
+	/**
+	 * Returns whether the given {@link String} is a valid {@link CustomerNumber}.
+	 * 
+	 * @param number
+	 * @return
+	 */
 	public static boolean isValid(String number) {
 		return StringUtils.hasText(number) && number.matches(REGEX);
 	}

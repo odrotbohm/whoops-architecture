@@ -1,5 +1,5 @@
 /*
- * Copyright 2011 the original author or authors.
+ * Copyright 2011-2013 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,9 +17,12 @@ package de.olivergierke.whoops.service.customer;
 
 import java.util.Random;
 
+import org.springframework.util.Assert;
+
 import de.olivergierke.whoops.domain.customer.CustomerNumber;
 
 /**
+ * Component to generate {@link CustomerNumber} instances based on a configurable alphabet.
  * 
  * @author Oliver Gierke
  */
@@ -29,22 +32,21 @@ class CustomerNumberGenerator {
 	private String alphabet = DEFAULT_ALPHABET;
 
 	/**
-	 * Configures the alphabet that is used to create random new passwords. Defaults to
-	 * {@value #DEFAULT_ALPHABET}.
+	 * Configures the alphabet that is used to create random new passwords. Defaults to {@value #DEFAULT_ALPHABET}.
 	 * 
 	 * @param alphabet the alphabet to set
 	 */
 	public void setAlphabet(String passwordAlphabet) {
-
+		Assert.hasText(passwordAlphabet, "Password alphabet must not be empty!");
 		this.alphabet = passwordAlphabet;
 	}
 
-	/*
-	 * (non-Javadoc)
+	/**
+	 * Generates a random {@link CustomerNumber} based on the configured alphabet.
 	 * 
-	 * @see com.synyx.minos.umt.service.PasswordCreator#generatePassword()
+	 * @return will never be {@literal null}.
 	 */
-	public CustomerNumber generatePassword() {
+	public CustomerNumber generateCustomerNumber() {
 
 		StringBuffer buffer = new StringBuffer();
 		Random random = new Random();

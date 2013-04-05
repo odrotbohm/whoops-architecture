@@ -1,5 +1,5 @@
 /*
- * Copyright 2011 the original author or authors.
+ * Copyright 2011-2013 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,11 +18,14 @@ package de.olivergierke.whoops.service.account;
 import de.olivergierke.whoops.domain.customer.Customer;
 
 /**
- *
  * @author Oliver Gierke
  */
 public interface AccountService {
 
+	/**
+	 * Extends all the contracts the given customer owns.
+	 * 
+	 * @param customer must not be {@literal null}.
+	 */
 	void extendContractsFor(Customer customer);
-
 }

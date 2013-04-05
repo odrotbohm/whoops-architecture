@@ -1,5 +1,5 @@
 /*
- * Copyright 2011 the original author or authors.
+ * Copyright 2011-2013 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,17 +24,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import de.olivergierke.whoops.account.AccountConfig;
 import de.olivergierke.whoops.account.AccountService;
 import de.olivergierke.whoops.customer.Customer;
-import de.olivergierke.whoops.customer.CustomerConfig;
 import de.olivergierke.whoops.customer.CustomerService;
 
 /**
+ * Integration test to check the application configuration is working.
+ * 
  * @author Oliver Gierke
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = { ApplicationConfiguration.class, AccountConfig.class, CustomerConfig.class })
+@ContextConfiguration(classes = { ApplicationConfiguration.class })
 public class ApplicationConfigurationTest {
 
 	@Autowired

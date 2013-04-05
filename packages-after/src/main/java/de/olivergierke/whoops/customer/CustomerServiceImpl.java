@@ -1,5 +1,5 @@
 /*
- * Copyright 2011 the original author or authors.
+ * Copyright 2011-2013 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,6 +20,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
 /**
+ * Implementation of {@link CustomerService}.
  * 
  * @author Oliver Gierke
  */
@@ -43,11 +44,14 @@ class CustomerServiceImpl implements CustomerService {
 
 	/*
 	 * (non-Javadoc)
-	 * @see de.olivergierke.whoops.service.customer.CustomerService#createCustomer(java.lang.String, java.lang.String)
+	 * @see de.olivergierke.whoops.customer.CustomerService#createCustomer(java.lang.String, java.lang.String)
 	 */
 	public Customer createCustomer(String firstname, String lastname) {
 
-		CustomerNumber number = generator.generatePassword();
+		Assert.hasText(firstname, "Firstname must not be null or empty!");
+		Assert.hasText(lastname, "Lastname must not be null or empty!");
+
+		CustomerNumber number = generator.generateCustomerNumber();
 		Customer customer = new Customer(firstname, lastname, number);
 
 		return repository.save(customer);

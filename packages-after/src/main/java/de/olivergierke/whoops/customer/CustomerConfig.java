@@ -1,5 +1,5 @@
 /*
- * Copyright 2011 the original author or authors.
+ * Copyright 2011-2013 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- *
+ * Spring Configuration creating mock components of repository instances.
+ * 
  * @author Oliver Gierke
  */
 @Configuration
@@ -31,6 +32,7 @@ public class CustomerConfig {
 
 	@Bean
 	public CustomerRepository customerRepository() {
+
 		CustomerRepository repository = mock(CustomerRepository.class);
 		when(repository.save(any(Customer.class))).thenAnswer(withArgument());
 		return repository;
