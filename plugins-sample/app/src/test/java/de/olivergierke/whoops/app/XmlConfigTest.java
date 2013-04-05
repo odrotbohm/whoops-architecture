@@ -26,11 +26,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import de.olivergierke.whoops.app.UnsupportedInstrument;
 import de.olivergierke.whoops.core.Deal;
 import de.olivergierke.whoops.core.DealProcessor;
 import de.olivergierke.whoops.core.Result;
 import de.olivergierke.whoops.core.UnsupportedInstrumentException;
 import de.olivergierke.whoops.equities.Equity;
+import de.olivergierke.whoops.options.Option;
 
 /**
  * Integration test using XML configuration.
@@ -50,6 +52,15 @@ public class XmlConfigTest {
 
 		Result result = processor.process(deal);
 		assertThat(result.getFee(), is(new BigDecimal(10.5)));
+	}
+
+	@Test
+	public void processesOptions() {
+
+		Deal deal = new Deal(new Option(new Equity("Deutsche Bank")));
+
+		Result result = processor.process(deal);
+		assertThat(result.getFee(), is(new BigDecimal(10.5).multiply(new BigDecimal(1.2))));
 	}
 
 	@Test(expected = UnsupportedInstrumentException.class)
