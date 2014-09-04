@@ -23,7 +23,7 @@
 	</modules>
 	
 	<properties>
-		<spring-plugins.version>0.8.0.BUILD-SNAPSHOT</spring-plugins.version>
+		<spring-plugins.version>1.0.0.RELEASE</spring-plugins.version>
 	</properties>
 	
 	<dependencies>

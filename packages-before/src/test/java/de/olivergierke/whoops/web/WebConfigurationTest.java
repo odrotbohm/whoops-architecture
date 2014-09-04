@@ -15,7 +15,6 @@
  */
 package de.olivergierke.whoops.web;
 
-
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
@@ -26,15 +25,12 @@ import de.olivergierke.whoops.web.account.AccountController;
 import de.olivergierke.whoops.web.customer.CustomerController;
 
 /**
- * 
  * @author Oliver Gierke
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = { WebConfiguration.class })
 public class WebConfigurationTest extends ApplicationConfigurationTest {
 
-	@Autowired
-	AccountController accountController;
-	@Autowired
-	CustomerController customerController;
+	@Autowired AccountController accountController;
+	@Autowired CustomerController customerController;
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2011 the original author or authors.
+ * Copyright 2011-2014 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,27 +32,20 @@ import de.olivergierke.whoops.service.account.AccountServiceImpl;
 import de.olivergierke.whoops.service.customer.CustomerService;
 
 /**
- *
  * @author Oliver Gierke
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = ApplicationConfiguration.class)
 public class ApplicationConfigurationTest {
 
-	@Autowired
-	AccountRepository accountRepository;
-	@Autowired
-	CustomerRepository customerRepository;
+	@Autowired AccountRepository accountRepository;
+	@Autowired CustomerRepository customerRepository;
 
-	@Autowired
-	AccountService accountService;
-	@Autowired
-	CustomerService customerService;
-
+	@Autowired AccountService accountService;
+	@Autowired CustomerService customerService;
 
 	// This should not be allowed to work actually
-	@Autowired
-	AccountServiceImpl accountServiceImpl;
+	@Autowired AccountServiceImpl accountServiceImpl;
 
 	@Test
 	public void createNewUser() {

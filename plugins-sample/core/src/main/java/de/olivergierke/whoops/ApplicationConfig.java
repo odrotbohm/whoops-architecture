@@ -29,6 +29,4 @@ import de.olivergierke.whoops.core.TransactionFeeProvider;
 @Configuration
 @ComponentScan
 @EnablePluginRegistries(TransactionFeeProvider.class)
-public class ApplicationConfig {
-
-}
+public class ApplicationConfig {}
