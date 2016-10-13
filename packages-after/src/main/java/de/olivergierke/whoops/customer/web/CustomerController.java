@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2013 the original author or authors.
+ * Copyright 2011-2016 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,12 +15,12 @@
  */
 package de.olivergierke.whoops.customer.web;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.util.Assert;
-
 import de.olivergierke.whoops.customer.Customer;
 import de.olivergierke.whoops.customer.CustomerService;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
+
+import org.springframework.stereotype.Controller;
 
 /**
  * Stub web component managing {@link Customer} thorugh a {@link CustomerService}.
@@ -28,20 +28,8 @@ import de.olivergierke.whoops.customer.CustomerService;
  * @author Oliver Gierke
  */
 @Controller
+@RequiredArgsConstructor
 public class CustomerController {
 
-	@SuppressWarnings("unused")
-	private final CustomerService customerService;
-
-	/**
-	 * Creates a new {@link CustomerController} using the given {@link CustomerService}.
-	 * 
-	 * @param customerService must not be {@literal null}.
-	 */
-	@Autowired
-	public CustomerController(CustomerService customerService) {
-
-		Assert.notNull(customerService);
-		this.customerService = customerService;
-	}
+	private final @NonNull CustomerService customerService;
 }

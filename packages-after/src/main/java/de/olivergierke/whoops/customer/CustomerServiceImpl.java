@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2013 the original author or authors.
+ * Copyright 2011-2016 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,9 @@
  */
 package de.olivergierke.whoops.customer;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
+
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
@@ -25,22 +27,11 @@ import org.springframework.util.Assert;
  * @author Oliver Gierke
  */
 @Service
+@RequiredArgsConstructor
 class CustomerServiceImpl implements CustomerService {
 
 	private final CustomerNumberGenerator generator = new CustomerNumberGenerator();
-	private final CustomerRepository repository;
-
-	/**
-	 * Creates a new {@link CustomerServiceImpl}.
-	 * 
-	 * @param repository must not be {@literal null}.
-	 */
-	@Autowired
-	public CustomerServiceImpl(CustomerRepository repository) {
-
-		Assert.notNull(repository);
-		this.repository = repository;
-	}
+	private final @NonNull CustomerRepository repository;
 
 	/*
 	 * (non-Javadoc)

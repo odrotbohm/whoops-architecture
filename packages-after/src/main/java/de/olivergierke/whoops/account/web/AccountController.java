@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2013 the original author or authors.
+ * Copyright 2011-2016 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,35 +15,23 @@
  */
 package de.olivergierke.whoops.account.web;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.util.Assert;
-
 import de.olivergierke.whoops.account.Account;
 import de.olivergierke.whoops.account.AccountService;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
+
+import org.springframework.stereotype.Controller;
 
 /**
- * Stub web component managing {@link Account} thorugh an {@link AccountService}.
+ * Stub web component managing {@link Account} through an {@link AccountService}.
  * 
  * @author Oliver Gierke
  */
 @Controller
+@RequiredArgsConstructor
 public class AccountController {
 
-	@SuppressWarnings("unused")
-	private final AccountService accountService;
-
-	/**
-	 * Creates a new {@link AccountController} using the given {@link AccountService}.
-	 * 
-	 * @param accountService must not be {@literal null}.
-	 */
-	@Autowired
-	public AccountController(AccountService accountService) {
-
-		Assert.notNull(accountService);
-		this.accountService = accountService;
-	}
+	private final @NonNull AccountService accountService;
 
 	// controller methods go here
 }

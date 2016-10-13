@@ -1,5 +1,5 @@
 /*
- * Copyright 2013 the original author or authors.
+ * Copyright 2011-2016 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,9 +15,15 @@
  */
 package de.olivergierke.whoops.customer;
 
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+
 /**
  * @author Oliver Gierke
  */
+@Getter
+@RequiredArgsConstructor(access = AccessLevel.PACKAGE)
 public class Customer {
 
 	private Long id;
@@ -25,27 +31,4 @@ public class Customer {
 	private final String firstname;
 	private final String lastname;
 	private final CustomerNumber customerNumber;
-
-	Customer(String firstname, String lastname, CustomerNumber number) {
-
-		this.firstname = firstname;
-		this.lastname = lastname;
-		this.customerNumber = number;
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public String getFirstname() {
-		return firstname;
-	}
-
-	public String getLastname() {
-		return lastname;
-	}
-
-	public CustomerNumber getCustomerNumber() {
-		return customerNumber;
-	}
 }

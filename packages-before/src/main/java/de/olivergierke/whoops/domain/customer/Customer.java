@@ -1,5 +1,5 @@
 /*
- * Copyright 2013 the original author or authors.
+ * Copyright 2013-2016 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,14 +15,18 @@
  */
 package de.olivergierke.whoops.domain.customer;
 
+import de.olivergierke.whoops.domain.account.Account;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import de.olivergierke.whoops.domain.account.Account;
 
 /**
  * @author Oliver Gierke
  */
+@Getter
+@RequiredArgsConstructor
 public class Customer {
 
 	private Long id;
@@ -32,27 +36,4 @@ public class Customer {
 	private final CustomerNumber customerNumber;
 
 	private final List<Account> accounts = new ArrayList<Account>();
-
-	public Customer(String firstname, String lastname, CustomerNumber number) {
-
-		this.firstname = firstname;
-		this.lastname = lastname;
-		this.customerNumber = number;
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public String getFirstname() {
-		return firstname;
-	}
-
-	public String getLastname() {
-		return lastname;
-	}
-
-	public CustomerNumber getCustomerNumber() {
-		return customerNumber;
-	}
 }

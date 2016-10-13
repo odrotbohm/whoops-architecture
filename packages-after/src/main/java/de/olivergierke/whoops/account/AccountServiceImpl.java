@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2013 the original author or authors.
+ * Copyright 2011-2016 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,13 +15,14 @@
  */
 package de.olivergierke.whoops.account;
 
+import de.olivergierke.whoops.customer.Customer;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
+
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
-
-import de.olivergierke.whoops.customer.Customer;
 
 /**
  * Default implementation of {@link AccountService}.
@@ -29,21 +30,10 @@ import de.olivergierke.whoops.customer.Customer;
  * @author Oliver Gierke
  */
 @Service
+@RequiredArgsConstructor
 class AccountServiceImpl implements AccountService {
 
-	private final AccountRepository repository;
-
-	/**
-	 * Creates a new {@link AccountServiceImpl} using the given {@link AccountRepository}.
-	 * 
-	 * @param repository must not be {@literal null}.
-	 */
-	@Autowired
-	public AccountServiceImpl(AccountRepository repository) {
-
-		Assert.notNull(repository);
-		this.repository = repository;
-	}
+	private final @NonNull AccountRepository repository;
 
 	/*
 	 * (non-Javadoc)

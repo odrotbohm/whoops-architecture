@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2013 the original author or authors.
+ * Copyright 2011-2016 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,23 +15,22 @@
  */
 package de.olivergierke.whoops.web.account;
 
+import de.olivergierke.whoops.domain.account.Account;
+import de.olivergierke.whoops.service.account.AccountService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.Assert;
 
-import de.olivergierke.whoops.domain.account.Account;
-import de.olivergierke.whoops.service.account.AccountService;
-
 /**
- * Stub web component managing {@link Account} thorugh an {@link AccountService}.
+ * Stub web component managing {@link Account} through an {@link AccountService}.
  * 
  * @author Oliver Gierke
  */
 @Controller
 public class AccountController {
 
-	@SuppressWarnings("unused")
-	private final AccountService accountService;
+	@SuppressWarnings("unused") private final AccountService accountService;
 
 	/**
 	 * Creates a new {@link AccountController} using the given {@link AccountService}.

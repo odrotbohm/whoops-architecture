@@ -1,5 +1,5 @@
 /*
- * Copyright 2011 the original author or authors.
+ * Copyright 2011-2016 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,14 +15,14 @@
  */
 package de.olivergierke.whoops.web;
 
+import de.olivergierke.whoops.ApplicationConfigurationTest;
+import de.olivergierke.whoops.web.account.AccountController;
+import de.olivergierke.whoops.web.customer.CustomerController;
+
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-
-import de.olivergierke.whoops.ApplicationConfigurationTest;
-import de.olivergierke.whoops.web.account.AccountController;
-import de.olivergierke.whoops.web.customer.CustomerController;
 
 /**
  * @author Oliver Gierke
